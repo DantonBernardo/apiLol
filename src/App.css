@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Anton', sans-serif;
+  background-color: rgb(33, 13, 43);
+  color: #f4f0f0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  height: 300px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header #FundoHeader {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+  filter: brightness(35%);
+}
+
+header #LogoLol {
+  position: absolute;
+  width: 30%;
+}
+
+hr {
+  color: black;
+  border: solid black 3px;
+}
+
+#Info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+  gap: 1.5em;
+  padding: 1em;
+  justify-items: center;
+}
+
+#ChampCard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+#ChampCard img {
+  width: 100%;
+  border-radius: 50%;
+  transition: .5s;
+  filter: brightness(50%);
+  margin-bottom: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#ChampCard img:hover {
+  transition: .5s;
+  filter: brightness(100%);
+}
+
+
+footer {
+  background-color: black;
+  color: #f4f0f0;
+  padding: 15px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+footer img {
+  height: 100px;
+  margin: 0 auto;
 }
