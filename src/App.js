@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import './App.css'; // Importação do arquivo de estilo
 
 export default function App() {
-  const [champInfo, setChampInfo] = useState([]);
+  const [champInfo, setChampInfo] = useState([]); // Declaração da variável para armazenar os dados de nossa api
 
   useEffect(() => {
-    let url = 'https://ddragon.leagueoflegends.com/cdn/12.10.1/data/en_US/champion.json';
-    fetch(url)
-      .then((r) => r.json()) 
+    let url = 'https://ddragon.leagueoflegends.com/cdn/12.10.1/data/en_US/champion.json'; // URL da API
+    fetch(url) // Fetch para pegar os dados bruto da api
+      .then((r) => r.json()) // Conversão dos dados para estilo .json
       .then((json) => {
-        setChampInfo(Object.values(json.data));
+        setChampInfo(Object.values(json.data)); // Pegando apenas os dados importantes, sendo dentro da área de data
       });
   }, []);
 
@@ -21,8 +21,8 @@ export default function App() {
       </header>
 
       <hr/>
-
       <div id="Info">
+        {/*Função para caminhar sobre todos os dados obtidos da API via variável 'ChampInfo'*/}  
         {champInfo.map((champ) => (
           <div id="ChampCard" key={champ.id}>
             <img
